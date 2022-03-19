@@ -7,7 +7,7 @@ navToggle.addEventListener('click', () => {
     if(visibility === "false"){
         navLink.setAttribute('data-visible', true);
         navToggle.setAttribute('aria-expanded', true);
-    } else{
+    } else if(visibility === "true"){
         navLink.setAttribute('data-visible', false);
         navToggle.setAttribute('aria-expanded', false);
     };
