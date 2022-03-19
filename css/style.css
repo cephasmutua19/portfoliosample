@@ -1,0 +1,451 @@
+/*
+Build a Personal Portfolio Webpage
+Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/zNBOYG.
+
+Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
+
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+
+User Story #1: My portfolio should have a welcome section with an id of welcome-section.
+
+User Story #2: The welcome section should have an h1 element that contains text.
+
+User Story #3: My portfolio should have a projects section with an id of projects.
+
+User Story #4: The projects section should contain at least one element with a class of project-tile to hold a project.
+
+User Story #5: The projects section should contain at least one link to a project.
+
+User Story #6: My portfolio should have a navbar with an id of navbar.
+
+User Story #7: The navbar should contain at least one link that I can click on to navigate to different sections of the page.
+
+User Story #8: My portfolio should have a link with an id of profile-link, which opens my GitHub or FCC profile in a new tab.
+
+User Story #9: My portfolio should have at least one media query.
+
+User Story #10: The height of the welcome section should be equal to the height of the viewport.
+
+User Story #11: The navbar should always be at the top of the viewport.
+
+You can build your project by using this CodePen template and clicking Save to create your own pen. Or you can use this CDN link to run the tests in any environment you like: https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Once you're done, submit the URL to your working project with all its tests passing.
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #a8baa9;
+    /* overflow: hidden; */
+}
+
+/* navbar styling */
+
+#navbar{
+    position: fixed;
+    width: 100%;
+    /* background-color: rgb(24, 23, 25); */
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    place-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3em;
+    z-index: 999;
+}
+
+#nav-logo{
+    display: flex;
+    place-items: center;
+}
+
+#nav-logo > img{
+    width: 4.3em;
+    padding-right: .3em;
+}
+
+#nav-logo > p{
+    color: aliceblue;
+    font-size: 1.5rem;
+    border-left: 2px solid aliceblue;
+    padding-left: .5em;
+    letter-spacing: .5rem;
+}
+
+#nav-link{
+    display: flex;
+}
+
+#nav-link > a{
+    font-size: 1.5rem;
+    padding: 1em;
+    color: rgb(63, 63, 63);
+    background-color: #a8baa9;
+
+}
+
+#nav-link > a:hover{
+    color: #a8baa9;
+    background-color: rgb(63, 63, 63);
+
+}
+
+/* hide toggled nav from screen */
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+
+
+#welcome-section{
+    display: flex;
+    place-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#dev-img >img{
+    width: 27em;
+    padding-top: 9em;
+}
+
+#greetings{
+    width: 60vw;
+    text-align: center;
+    padding-left: 3em;
+    line-height: 5em;
+}
+
+#greetings > h1{
+    font-size: 5rem;
+    color: rgb(36, 36, 36);
+    padding-top: 1.5em;
+
+
+}
+
+#greetings > p{
+    margin-top: .5em;
+    font-size: 1.7rem;
+    font-style: oblique;
+    color: rgb(46, 88, 46);
+    line-height: 1.2em;
+}
+
+
+
+#projects{
+    background-color: rgb(63, 63, 63);display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 3em;
+}
+
+#projects > h1{
+    margin-top: 2em;
+    color: aliceblue;
+    border-bottom: .05em solid aliceblue;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: 500;
+    
+}
+
+#tiles{
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+    padding: 3em;
+    margin-top: 1em;
+    gap: 5em;
+    
+}
+.project-tile{
+    
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+}
+
+.project-tile > img{
+    width: 20em;
+}
+
+.project-tile > #tint{
+    background-color: black;
+    width: 20em;
+    height: 20em;
+    opacity: .2;
+    position: absolute;
+    margin-top: -6.1em;
+    transition: opacity 300ms ease-out, background-image 500ms ease-in-out ;
+
+}
+
+.project-tile:hover #tint{
+    opacity: .7;
+    background-image: url(../image/cephdesignslogo_junglegreen.png);
+    background-size: cover;
+}
+
+.project-tile > figcaption{
+    background-color: rgb(123, 170, 79);
+    color: rgb(36, 36, 36);
+    /* color: #8caf61; */
+    width: 100%;
+    padding: 1.6em 0em;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 0% 0% 20% 20%;
+}
+
+.project-tile:hover figcaption{
+    background-color: rgb(36, 36, 36);
+    color: aliceblue;
+}
+
+
+
+#contact{
+    text-align: center;
+    padding-bottom: 5em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+#contact > h2{
+    margin-top: 2em;
+    color: rgb(36, 36, 36);
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: 900;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#contact > p{
+    margin-top: .5em;
+    font-size: 1.2rem;
+    color: rgb(36, 36, 36);
+    font-style: oblique;
+}
+
+#profile{
+    margin-top: 2em;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#profile > #profile-link{
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(36, 36, 36);
+    
+}
+
+#line{
+    border-top: .19em solid rgb(36, 36, 36);
+}
+
+
+
+#footer{
+    background-color: #8caf61;
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 5em;
+}
+
+#footer > p{
+    font-family: monospace;
+    font-size: 1.4rem;
+    color: rgb(36, 36, 36);
+}
+
+.footer-logo{
+    background-color: rgb(36, 36, 36);
+    padding: 1em 2em;
+    opacity: .7;
+
+}
+
+#footer-link{
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(36, 36, 36);
+}
+
+
+/* Media query */
+
+
+@media (max-width: 41em){ 
+    #navbar{
+        padding-left: .2em;
+    }
+    
+    #nav-link{
+        
+        position: fixed;
+        inset: 0 0 0 30%;
+        background: hsla(0, 0%, 14%, 0.842);
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 500ms ease-in-out;
+    }
+    
+    #nav-link[data-visible="true"]{
+        transform: translateX(0%);
+    }
+
+    #nav-link > a{
+        font-size: 1.2rem;
+        padding: 1em;
+        /* color: aliceblue; */
+        color: #a8baa9;
+        background-color: transparent;
+
+    
+    }
+
+    #nav-link > a:hover{
+        color: rgb(36, 36, 36);
+        background-color: #8caf61;
+    
+    }
+
+    .footer-logo{
+        background-color: rgb(36, 36, 36);
+        padding: 0;
+        opacity: .7;
+    
+    }
+
+    #footer{
+        padding: 2em;
+    }
+
+    #nav-logo > img{
+        width: 3.3em;
+        padding-right: .1em;
+    }
+    
+    #nav-logo > p{
+        color: aliceblue;
+        font-size: 1rem;
+        border-left: 2px solid aliceblue;
+        padding-left: .5em;
+        letter-spacing: .35rem;
+    }
+    
+    #greetings > h1{
+        font-size: 2.3rem;
+        color: rgb(36, 36, 36);
+        line-height: 1.1em;
+    
+    
+    }
+    
+    #greetings > p{
+        margin-top: .5em;
+        font-size: 1.4rem;
+        font-style: oblique;
+        color: rgb(46, 88, 46);
+        line-height: 1.2em;
+    }
+    
+    #projects > h1{
+        margin-top: 2em;
+        color: aliceblue;
+        border-bottom: .05em solid aliceblue;
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: 500;
+        padding: 0 1.5em;
+        
+    }
+    
+    .project-tile > figcaption{
+        padding: 1.6em 0em;
+        font-size: 1rem; 
+    }
+    
+    .project-tile > img{
+        width: 15em;
+    }
+    
+    .project-tile > #tint{
+        width: 15em;
+        height: 15em;
+        margin-top: -4.8em;
+    }
+    
+    #contact > h2{
+        font-size: 2em;
+        
+    }
+    
+    #contact > p{
+        margin-top: .5em;
+        font-size: 1.2rem;
+        color: rgb(36, 36, 36);
+        font-style: oblique;
+    }
+    
+    .sr-only{
+        display: none;
+    }
+    
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        background-image: url(../image/humburger.png);
+        width: 1.7rem;
+        height: 1.7rem;
+        /* aspect-ratio: 1; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: .7rem;
+        right: 2rem;
+        z-index: 3000;
+        border: 0;
+
+
+    }
+    
+    .mobile-nav-toggle[aria-expanded="true"]{
+        background-image: url(../image/cancel.png);
+    }
+}
+
