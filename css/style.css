@@ -326,7 +326,7 @@ body{
     }
     
     #nav-link[data-visible="true"]{
-        transform: translateX(50%);/* was 0% */
+        transform: translateX(0%);/* was 0% */
     }
 
     #nav-link > a{
