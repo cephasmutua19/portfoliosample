@@ -315,7 +315,7 @@ body{
     #nav-link{
         
         position: fixed;
-        inset: 30% 0 0 30%;
+        inset: 0 0 0 30%;
         background: hsla(0, 0%, 14%, 0.842);
         flex-direction: column;
         /* row-gap: 2rem; */
