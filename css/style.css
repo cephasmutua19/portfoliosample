@@ -318,8 +318,8 @@ body{
         inset: 0 0 0 30%;
         background: hsla(0, 0%, 14%, 0.842);
         flex-direction: column;
-        row-gap: .5rem;
-        margin-top: 0; 
+        /* row-gap: 2rem; */
+        /* margin-top: 0;  */
         /* padding: min(20vh, 10rem) 2em; */
         padding-top: 3em;
         z-index: 1000;
