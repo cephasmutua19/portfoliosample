@@ -318,7 +318,7 @@ body{
         inset: 0 0 0 30%;
         background: hsla(0, 0%, 14%, 0.842);
         flex-direction: column;
-        margin-top: 0; /* sampling if it will make a difference*/
+        /* margin-top: 0;  */
         padding: min(30vh, 10rem) 2em;
         z-index: 1000;
         transform: translateX(200%);
