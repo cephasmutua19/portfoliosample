@@ -323,7 +323,7 @@ body{
         /* padding: min(20vh, 10rem) 2em; */
         padding-top: 3em;
         z-index: 1000;
-        transform: translateX(150%);
+        transform: translateX(350%);
         transition: transform 500ms ease-in-out;
         justify-content: center;
     }
