@@ -320,7 +320,7 @@ body{
         flex-direction: column;
         row-gap: 2rem;
         /* margin-top: 0;  */
-        /* padding: min(20vh, 10rem) 2em; */
+        padding: min(20vh, 10rem) 2em;
         padding-top: 7em;
         z-index: 1000;
         margin-right: 0;
