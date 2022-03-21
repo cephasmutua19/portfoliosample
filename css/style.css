@@ -315,13 +315,13 @@ body{
     #nav-link{
         
         position: fixed;
-        inset: 10% 0 0 30%;
+        inset: 30% 0 0 30%;
         background: hsla(0, 0%, 14%, 0.842);
         flex-direction: column;
         /* row-gap: 2rem; */
         /* margin-top: 0;  */
         /* padding: min(20vh, 10rem) 2em; */
-        padding-top: 5em;
+        /* padding-top: 5em; */
         z-index: 1000;
         margin-right: 0;
         transform: translateX(350%);
