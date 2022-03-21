@@ -326,7 +326,7 @@ body{
         margin-right: 0;
         transform: translateX(350%);
         transition: transform 500ms ease-in-out;
-        justify-content: center;
+        justify-content: space-around;
     }
     
     #nav-link[data-visible="true"]{
